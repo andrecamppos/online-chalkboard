@@ -1,6 +1,46 @@
-canvas {
+  canvas {
     background-color: #040506; /* Dark background to mimic a chalkboard */
-    display: block;
     cursor: crosshair;
+  }
+
+  .top-bar {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between color palette and clear button */
+  }
+  
+  .color-palette {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .color-button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .color-button:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .clear-button {
+    padding: 8px 12px;
+    background-color: #FF5252; /* Soft red color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .clear-button:hover {
+    background-color: #FF1744; /* Darker red on hover */
   }
   
