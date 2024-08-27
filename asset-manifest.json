@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/online-chalkboard/static/css/main.9d701a54.css",
+    "main.js": "/online-chalkboard/static/js/main.1af9dafa.js",
+    "static/js/453.5369575b.chunk.js": "/online-chalkboard/static/js/453.5369575b.chunk.js",
+    "index.html": "/online-chalkboard/index.html",
+    "main.9d701a54.css.map": "/online-chalkboard/static/css/main.9d701a54.css.map",
+    "main.1af9dafa.js.map": "/online-chalkboard/static/js/main.1af9dafa.js.map",
+    "453.5369575b.chunk.js.map": "/online-chalkboard/static/js/453.5369575b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9d701a54.css",
+    "static/js/main.1af9dafa.js"
+  ]
+}
