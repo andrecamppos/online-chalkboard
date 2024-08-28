@@ -26,17 +26,6 @@ const Chalkboard = () => {
     context.fillStyle = '#040506';
     context.fillRect(0, 0, canvas.width, canvas.height);
 
-    const preventTouchScroll = (e) => {
-      if (e.target === canvas) {
-        e.preventDefault();
-      }
-    };
-  
-    document.body.addEventListener('touchmove', preventTouchScroll, { passive: false });
-  
-    return () => {
-      document.body.removeEventListener('touchmove', preventTouchScroll);
-    };
   }, []);
 
   const startDrawing = (e) => {
@@ -46,16 +35,32 @@ const Chalkboard = () => {
     draw(e);
   };
 
+  const handleTouchStart = (e) => {
+    setIsDrawing(true);
+    const touch = e.touches[0];
+    const { pageX: x, pageY: y } = touch;
+    setLastPosition({ x, y });
+    draw(x, y);
+  }
+
   const stopDrawing = () => {
     setIsDrawing(false);
     ctx.beginPath();
   };
 
-  const draw = (e) => {
-    if (!isDrawing) return;
-
+  const drawing = (e) => {
     const { clientX: x, clientY: y } = e;
+    draw(x, y);
+  }
 
+  const touchDrawing = (e) => {
+    const touch = e.touches[0];
+    const { pageX: x, pageY: y } = touch;
+    draw(x, y);
+  }
+
+  const draw = (x, y) => {
+    if (!isDrawing) return;
     // Create chalk effect by using a randomized opacity and slight offsets
     ctx.lineWidth = 8;
     ctx.lineCap = 'round';
@@ -97,10 +102,11 @@ const Chalkboard = () => {
         ref={canvasRef}
         onMouseDown={startDrawing}
         onMouseUp={stopDrawing}
-        onMouseMove={draw}
-        onTouchStart={startDrawing}
+        onMouseMove={drawing}
+        onTouchStart={handleTouchStart}
         onTouchEnd={stopDrawing}
-        onTouchMove={draw}
+        onTouchMove={touchDrawing}
+        style={{ touchAction: 'none' }}
       />
       <div className="top-bar">
         <div className="color-palette">
