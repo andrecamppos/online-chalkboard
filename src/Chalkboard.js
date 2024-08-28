@@ -98,6 +98,9 @@ const Chalkboard = () => {
 
   return (
     <div>
+      <div className="header">
+        <h1>CHALKBOARD</h1>
+      </div>
       <canvas
         ref={canvasRef}
         onMouseDown={startDrawing}

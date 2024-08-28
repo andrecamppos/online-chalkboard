@@ -1,12 +1,27 @@
+  @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap');
+  
   canvas {
     background-color: #040506; /* Dark background to mimic a chalkboard */
-    display: block;
+    width: 100%;
+    height: 100vh;
+    display: flex;
     cursor: crosshair;
+  }
+
+  .header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: #1E1F21; /* Dark gray color */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .top-bar {
     position: fixed;
-    top: 20px;
+    top: 90px;
     left: 20px;
     display: flex;
     align-items: center;
@@ -43,5 +58,40 @@
   
   .clear-button:hover {
     background-color: #FF1744; /* Darker red on hover */
+  }
+
+  h1 {
+    font-family: 'Cabin Sketch';
+    color: white;
+    font-size: 48px;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 36px;
+    }
+
+    .header {
+      padding: 10px;
+    }
+
+    .top-bar {
+      top: 80px;
+      left: 10px;
+    }
+
+    .color-button {
+      width: 20px;
+      height: 20px;
+    }
+
+    .clear-button {
+      padding: 6px 10px;
+    }
+
+    .color-palette {
+      gap: 5px;
+    }
+
   }
   
