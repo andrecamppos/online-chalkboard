@@ -11,14 +11,34 @@ const Chalkboard = () => {
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    // canvas.width = window.innerWidth;
+    // canvas.height = window.innerHeight;
     const context = canvas.getContext('2d');
     setCtx(context);
+
+    const updateCanvasSize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    updateCanvasSize();
+    window.addEventListener('resize', updateCanvasSize);
 
     // Set canvas background color to a darker shade
     context.fillStyle = '#040506';
     context.fillRect(0, 0, canvas.width, canvas.height);
+
+    const preventTouchScroll = (e) => {
+      if (e.target === canvas) {
+        e.preventDefault();
+      }
+    };
+  
+    document.body.addEventListener('touchmove', preventTouchScroll, { passive: false });
+  
+    return () => {
+      document.body.removeEventListener('touchmove', preventTouchScroll);
+    };
   }, []);
 
   const startDrawing = (e) => {
