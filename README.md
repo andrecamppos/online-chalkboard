@@ -46,18 +46,19 @@ Before you begin, ensure you have the following installed on your local machine:
 
 ## Running the Project
 
-### To start the development server, run:
+To start the development server, run:
 
-    ```bash
-    npm start
-    ```
+   ```bash
+   npm start
+   ```
 
 ## Building for Production
-### To build the project for production, run:
 
-    ```bash
-    npm run build
-    ```
+To build the project for production, run:
+
+   ```bash
+   npm run build
+   ```
 
 ## Usage
 
