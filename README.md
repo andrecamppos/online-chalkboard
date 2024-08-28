@@ -71,4 +71,4 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## Acknowledgements
 - Inspired by traditional chalkboards and the desire to create a digital version.
-- Built with React.
+- Built with [React](https://react.dev/).
