@@ -98,6 +98,9 @@ const Chalkboard = () => {
         onMouseDown={startDrawing}
         onMouseUp={stopDrawing}
         onMouseMove={draw}
+        onTouchStart={startDrawing}
+        onTouchEnd={stopDrawing}
+        onTouchMove={draw}
       />
       <div className="top-bar">
         <div className="color-palette">
