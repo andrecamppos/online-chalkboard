@@ -96,6 +96,15 @@ const Chalkboard = () => {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
   };
 
+  const downloadImage = () => {
+    const canvas = canvasRef.current;
+    const dataURL = canvas.toDataURL('image/png');
+    const link = document.createElement('a');
+    link.href = dataURL;
+    link.download = 'chalkboard_drawing.png';
+    link.click();
+  };
+
   return (
     <div>
       <div className="header">
@@ -132,8 +141,11 @@ const Chalkboard = () => {
             />
           ))}
         </div>
+        <button className="download-button" onClick={downloadImage}>
+          DOWNLOAD
+        </button>
         <button className="clear-button" onClick={clearCanvas}>
-          Clear Board
+          CLEAR BOARD
         </button>
       </div>
     </div>
