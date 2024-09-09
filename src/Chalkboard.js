@@ -45,7 +45,7 @@ const Chalkboard = () => {
 
   const stopDrawing = () => {
     setIsDrawing(false);
-    ctx.beginPath();
+    ctx.closePath();
   };
 
   const drawing = (e) => {
